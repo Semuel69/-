@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Запрошення на весілля</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+  url("photo3.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: .85;
+}
+
+.names {
+  font-size: 38px;
+  margin: 25px 0;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: #fff;
+  margin: 30px auto;
+  opacity: .4;
+}
+
+.gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: .3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+.info {
+  background: #111;
+}
+
+.info h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.info p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  opacity: .85;
+}
+
+.details {
+  background: #0e0e0e;
+}
+
+.details ul {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.details li {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.button-section {
+  background: radial-gradient(circle, #1a1a1a, #050505);
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 18px 45px;
+  font-size: 18px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+footer {
+  padding: 40px 20px;
+  font-size: 14px;
+  opacity: .5;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <p>Ми вирішили зробити це офіційно</p>
+  <div class="names">Віталій ❤️ Поліна</div>
+  <h1>Запрошуємо Вас</h1>
+  <div class="divider"></div>
+  <p>Імʼя Прізвище По батькові</p>
+</section>
+
+<section class="info">
+  <h2>Це про любов. І трохи про нас</h2>
+  <p>
+    Без зайвого пафосу, але по-справжньому.
+    Буде сміх, сльози щастя, тости і спогади,
+    які потім ніхто не памʼятатиме повністю.
+  </p>
+
+  <div class="gallery">
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+  </div>
+</section>
+
+<section class="details">
+  <h2>Коли це станеться</h2>
+  <ul>
+    <li>📅 Дата: 08.08.2026</li>
+    <li>📍 Локація: дізнаєшся за кнопкою</li>
+    <li>🥂 Дрес-код: адекватний</li>
+  </ul>
+</section>
+
+<section class="button-section">
+  <h2>Усі деталі тут</h2>
+  <button class="btn" onclick="fireworks()">Відкрити</button>
+</section>
+
+<footer>
+  Віталій & Поліна • 08.08.2026 ❤️
+</footer>
+
+<script>
+function fireworks() {
+  for (let i = 0; i < 80; i++) {
+    const spark = document.createElement('div');
+    spark.style.position = 'fixed';
+    spark.style.width = '6px';
+    spark.style.height = '6px';
+    spark.style.background = 'hsl(' + Math.random()*360 + ',100%,50%)';
+    spark.style.left = Math.random()*100 + 'vw';
+    spark.style.top = '50vh';
+    spark.style.borderRadius = '50%';
+    spark.style.zIndex = '9999';
+    document.body.appendChild(spark);
+
+    spark.animate([
+      { transform: 'translate(0,0)', opacity: 1 },
+      { transform: 'translate(' + (Math.random()*400-200) + 'px,' + (Math.random()*-400) + 'px)', opacity: 0 }
+    ], { duration: 1200 });
+
+    setTimeout(() => spark.remove(), 1200);
+  }
+
+  setTimeout(() => {
+    window.location.href = "https://t.me/+zPLaictmr1IyMjFi";
+  }, 600);
+}
+</script>
+
+</body>
+</html>
